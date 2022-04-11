@@ -1,0 +1,15 @@
+遍历方式：
+先序遍历：根左右
+中序遍历：左根右
+后序遍历：左右根
+
+
+
+需要提前对数据排序的题目：
+合并区间 56
+ Arrays.sort(intervals,(inte1,inte2) -> inte1[0]-inte2[0]);
+
+
+
+前缀和是什么？
+SubArraySum560   前缀的和可以存成map,然后等到 pre 。pre+=nums[i]  如果pre-target在map中是否存在
