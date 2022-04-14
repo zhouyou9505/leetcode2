@@ -1,0 +1,12 @@
+206.反转链表
+定义prev，p，nex
+prev是用来做p指向prev的
+next是用来保存p.next快照的，指针改向左指后。prev先等于p，p=nex
+
+21.合并两个有序链表
+定义prev，p，nex     先new个p。 prev = p;  
+p是用来移动指针的，nex是每次都new出来的保存P1或者P2的数据。
+p.next = nex;
+p = next;
+返回prev.next;
+
