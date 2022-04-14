@@ -7,3 +7,18 @@
      left = mid + 1;
  }
  
+
+69. x 的平方根 
+省略小数点后面的，其实就是二分法的靠左取值
+int left = 0;
+int right = x;
+int flg = 0;
+while (left <= right){
+   int mid = (left + right) / 2;
+   !!!一定要转long不然会溢出为负数。  (long)mid*mid    !!!!
+   
+   if(x > (long)mid*mid){
+       flag=mid;
+       left=mid+1;
+   }
+}
