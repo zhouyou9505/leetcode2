@@ -3,3 +3,33 @@
  dfs(root.left);
  list.add(root.val);
  dfs(root.right);
+
+
+
+-------144. 二叉树的前序遍历
+list.add(root.val);
+dfs(root.left);
+dfs(root.right);
+
+
+-------110. 平衡二叉树
+递归返回当前树的最大深度，中间顺便比较一下树的左右子树高度差是否>1 ，然后记个check=false;
+int dfs(TreeNode root){
+ 
+  int left = dfs(root.left);
+  int right = dfs(root.right);
+  if (Math.abs(left-right) > 1){
+       ok = false;
+       return 0 ;
+  }
+  return Math.max(left,right)+1
+}
+
+
+--------104. 二叉树的最大深度
+int left = dfs(root.left);
+int right = dfs(root.right);
+return Math.max(left,right) + 1;
+
+
+
