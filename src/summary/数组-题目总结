@@ -1,0 +1,4 @@
+88. 合并两个有序数组
+先把nums1的往后拷贝，然后再用归并排序
+System.arraycopy(nums1, 0, nums1, nums1.length - m, m);
+
