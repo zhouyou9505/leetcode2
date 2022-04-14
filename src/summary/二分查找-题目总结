@@ -1,0 +1,9 @@
+704. 二分查找
+ while (left <= right){
+     int mid = (left + right)/2;
+     if(nums[mid] == target) return mid;
+     
+     right = mid - 1;
+     left = mid + 1;
+ }
+ 
