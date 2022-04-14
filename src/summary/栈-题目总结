@@ -1,3 +1,11 @@
 20. 有效的括号
 使用stack，如果是空就push，如果peek有数据，看isPair，如果不pair就push，如果pair就pop
 
+
+232. 用栈实现队列
+使用两个栈stack1,stack2实现队列
+先进先出，改成，先进后出
+stack1专门用来存的， stack2用来pop的
+每次存把stack2的全都pop到stack1.
+每次pop都把stack1的pop到stack2再pop
+
