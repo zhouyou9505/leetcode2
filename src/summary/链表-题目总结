@@ -36,6 +36,10 @@ return "有环";
  return p1;  //如果p1==p2都为null，那返回null没有问题。 
  
  
+-----剑指 Offer 22. 链表中倒数第k个节点
+求倒数第K个， 定义fast让fast先走k步，slow留在head。这样slow和fast就相差k
+此时slow和fast同时前进，等到fast为空，slow就是result
+
 
  
  
