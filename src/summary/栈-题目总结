@@ -1,0 +1,3 @@
+20. 有效的括号
+使用stack，如果是空就push，如果peek有数据，看isPair，如果不pair就push，如果pair就pop
+
