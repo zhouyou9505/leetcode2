@@ -1,11 +1,29 @@
-20. 有效的括号
+-------20. 有效的括号
 使用stack，如果是空就push，如果peek有数据，看isPair，如果不pair就push，如果pair就pop
 
 
-232. 用栈实现队列
+-------232. 用栈实现队列
 使用两个栈stack1,stack2实现队列
 先进先出，改成，先进后出
 stack1专门用来存的， stack2用来pop的
 每次存把stack2的全都pop到stack1.
 每次pop都把stack1的pop到stack2再pop
 
+
+
+-------155. 最小栈
+//能在常数时间内检索到最小元素的栈。
+//用stack来维护正常的栈数据，minStack专门用来维护栈顶到栈底 小到大 的栈，
+Stack<Integer> stack = null;
+Stack<Integer> minStack = null;
+
+ public void push(int val) {
+       stack.push(val);
+       //如果val大于最小栈的peek()，没必要塞进最小栈，因为stack那些大的元素pop的时候，并不影响最小栈的数据
+       if (minStack.isEmpty() || val <= minStack.peek()) {
+            minStack.push(val);
+        }
+    }
+    
+
+    
