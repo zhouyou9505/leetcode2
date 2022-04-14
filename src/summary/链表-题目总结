@@ -42,5 +42,11 @@ return "有环";
 
 
  
+ -------234. 回文链表
+ 快慢指针求出中心点在哪，把start1,end1  start2,end2确定下来
+ 注意链表的奇偶，如果是奇数start2=end1.next.next;  如果是偶数就是start=end1.next;
+ 把start1 end1反转，这个简单
+ 然后两个链表就直接比较value，不用担心一个为空一个不为空
+ 
  
  
