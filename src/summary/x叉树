@@ -57,5 +57,12 @@ public void isPair(TreeNode left, TreeNode right) {
 }
 
 
-
+--------剑指 Offer 54. 二叉搜索树的第k大节点
+二叉搜索数的中序遍历是递增，反中序遍历就是递减
+ dfs(root.right,k);
+    ++count;
+    if (count == k){
+        res = root.val;
+    }
+dfs(root.left,k);
 
