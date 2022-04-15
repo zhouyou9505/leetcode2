@@ -35,27 +35,19 @@ public class MaxProfit121 {
 
     public int maxProfit2(int[] prices) {
 
-        /**
-         * dp表示第i天用有的最大身价
-         * 为什么可以用dp来存储，其实就是第i天的状态一定是由两种状态转移而来
-         * 今天可以持有也可以不持有，从单天来看，不持有肯定是多身价的（股票在手里套牢了，那肯定就不能算现金流）
-         *
-         * 今天不持有：max(第i-1天持有态的最少付出钱+今天卖出的价格 ， 昨天不持有(0))
-         * 今天持有：max(第i-1天不持有（0）- 今天购买的价格 ，第i-1天持有)
-         */
-        int[][] dp = new int[prices.length][2];
-        //0表示不持有，1表示持有
-        dp[0][0] = 0;
-        dp[0][1] = -prices[0];
-        for (int i = 1; i < prices.length; i++) {
-            /**
-             * 上次持有到今天释放，
-             * 为什么是和0比较，因为是一次交易，所以状态为不持有，是没有说上次不持有的，就是0.
-             */
-            dp[i][0] = Math.max(dp[i - 1][1] + prices[i], 0);
-            dp[i][1] = Math.max(dp[i - 1][1], -prices[i]);
+        if (prices == null || prices.length == 0) {
+            return 0;
         }
-        return dp[prices.length - 1][0];
+
+        int[][] dp = new int[prices.length+1][2];
+        dp[1][0] = 0;
+        dp[1][1] = -prices[0];
+        for (int i = 2; i <= prices.length; i++) {
+            dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i-1]);
+            dp[i][1] = Math.max(-prices[i-1], dp[i-1][1]);
+        }
+
+        return dp[prices.length][0];
     }
 
     /**

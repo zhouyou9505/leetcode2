@@ -1,8 +1,6 @@
 package com.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 给定一个整数数组temperatures，表示每天的温度，返回一个数组answer，其中answer[i]是指在第 i 天之后
@@ -20,29 +18,24 @@ public class DailyTemperatures739 {
         new DailyTemperatures739().dailyTemperatures(teps);
     }
 
-
+    /**
+     * 单调栈
+     * 维护一个单调栈，这个单调栈用来计算一个数i ，最近一个比它大的数的间距。result[i]
+     * 因为无法知道后面的情况，我可以用先把自身i存到栈中，然后等到后面的 temperature_j > temperature_i时，再来设置 result[i] = j-i 就是间距了，
+     * 既然i处理完了旧把i pop掉，也不急着把j压进去，用while把栈里面的都试一遍，知道比大，就把j压进去
+     */
     public int[] dailyTemperatures(int[] temperatures) {
 
+        Deque<Integer> stack = new LinkedList<>();
+        int[] result = new int[temperatures.length];
 
-        //维护单调栈，如果右边的数字比栈顶元素大，那就pop出来
-        int[] answers = new int[temperatures.length];
-
-        Stack<String> stack = new Stack<String>();
-
-        for(int t=0;t<temperatures.length;t++){
-            if(!stack.isEmpty()){
-                String top = stack.peek();
-                int temp = Integer.valueOf(top.split("_")[0]);
-                int ind = Integer.valueOf(top.split("_")[1]);
-                if(temperatures[t] > temp){
-                    stack.pop();
-                    answers[ind] = t-ind;
-                }
+        for(int i= 0;i<temperatures.length;i++){
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]){
+                int peakIndex = stack.pop();
+                result[peakIndex] = i-peakIndex;
             }
-            stack.push(temperatures[t]+"_"+t);
+            stack.push(temperatures[i]);
         }
-
-        return answers;
-
+        return result;
     }
 }

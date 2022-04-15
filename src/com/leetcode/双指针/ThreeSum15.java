@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.双指针;
 
 import java.util.ArrayList;
 import java.util.Arrays;
