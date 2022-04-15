@@ -1,0 +1,26 @@
+Queue和Deque的区别
+
+Queue是单端队列
+Queue 和linkedList 结合使用， 单端队列
+offer()   poll()
+
+Deque 和linkedList 结合使用，是双端队列
+addFirst() removeFirst()
+addLast() removeLast()
+
+
+----------225. 用队列实现栈
+每次准备进来，先把所有的元素放到另一个队列保存。尽量使用offer和remove
+Queue<Integer> deque;
+Queue<Integer> deque2;
+
+public void push(int x) {
+   while (!deque.isEmpty()){
+       deque2.offer(deque.remove());
+   }
+   deque.offer(x);
+   while (!deque2.isEmpty()){
+       deque.offer(deque2.remove());
+   }
+}
+

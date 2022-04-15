@@ -1,9 +1,0 @@
-Queue和Deque的区别
-
-Queue是单端队列
-Queue 和linkedList 结合使用， 单端队列
-offer()   poll()
-
-Deque 和linkedList 结合使用，是双端队列
-addFirst() removeFirst()
-addLast() removeLast()
