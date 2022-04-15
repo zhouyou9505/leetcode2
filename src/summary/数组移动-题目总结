@@ -19,3 +19,18 @@ while(right < nums.length){
    }
    ++right;
 }
+
+
+
+---------26. 删除排序数组中的重复项
+Map<Integer,Integer> map = new HashMap<>();
+while(right < len){
+    if (map.get(nums[right]) == null){
+        map.put(nums[right],1);
+        swap(nums,left,right);
+        ++left;
+    }
+    ++right;
+}
+return left;
+
