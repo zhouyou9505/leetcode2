@@ -33,3 +33,29 @@ return Math.max(left,right) + 1;
 
 
 
+---------543. 二叉树的直径
+//一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+int left = dfs(root.left);
+int right = dfs(root.right);
+max = Math.max(max,left+right+1);
+return Math.max(left,right)+1;
+最后max-1
+
+
+------101. 对称二叉树
+public boolean isSymmetric(TreeNode root) {
+   isPair(root.left, root.right);
+   return check;
+}
+public void isPair(TreeNode left, TreeNode right) {
+   /**
+   * 判断值是否相等
+  **/
+        
+  isPair(left.left, right.right);
+  isPair(left.right, right.left);
+}
+
+
+
+
