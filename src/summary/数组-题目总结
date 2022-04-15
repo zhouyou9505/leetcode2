@@ -7,3 +7,22 @@ if (target < matrix[left][right]){
  if (target > matrix[left][right]){
      ++left;
  }
+
+
+---------剑指 Offer 29. 顺时针打印矩阵
+int left = 0, right = matrix[0].length - 1, top = 0, bottom = matrix.length - 1;
+int[] res = new int[matrix[0].length * matrix.length];
+int p = 0;
+while (true) {
+    从左往右
+    for (int i = left; i <= right; i++) {
+        res[p++] = matrix[top][i];
+    }
+    if (++top > bottom) {
+        break;
+    }
+从上往下
+从右往左
+从下往上
+            
+            
