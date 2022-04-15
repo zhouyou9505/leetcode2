@@ -1,3 +1,14 @@
  -----415. 字符串相加
  num1 = "11", num2 = "123"
  两个指针p1,p2从后向前，注意进1，用pre=0/1记录
+
+
+
+------7. 整数反转
+现在num的正负记下来，后面再用，先abs后处理数字
+int c = s.charAt(i) - '0';
+sum = sum * 10 + c;
+//用来判断sum是否要大于Integer.MAX_VALUE了
+if (sum > Integer.MAX_VALUE / 10 && i >= 1){
+     return 0;
+}
