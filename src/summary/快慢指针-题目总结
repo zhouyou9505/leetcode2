@@ -1,0 +1,12 @@
+-------283.移动零
+只要保证right在left后面，right不是0，left是0 就可以了
+right每次都++，所以肯定比left快。找right的不为0就可以了。left不用找也就一次会触发一次自己交换，
+后面都是把right的0换过来然后++left就一定是0
+int left=0,right=0;
+   while(right < nums.length){
+       if(nums[right] != 0){
+           swap(nums,left,right);
+           ++left;
+       }
+   ++right;
+}
