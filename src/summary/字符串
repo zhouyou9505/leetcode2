@@ -12,3 +12,18 @@ sum = sum * 10 + c;
 if (sum > Integer.MAX_VALUE / 10 && i >= 1){
      return 0;
 }
+
+
+---------125. 验证回文串
+是否是字符或者数字
+ if (Character.isLetterOrDigit(tmp)){
+       str += Character.toLowerCase(tmp);
+ }
+回文就直接
+int left = 0;
+int right = str.length()-1;
+while(left < right){
+   equals
+   ++left;
+   --right;
+}
