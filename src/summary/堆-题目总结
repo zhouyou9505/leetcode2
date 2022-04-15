@@ -1,0 +1,5 @@
+------剑指 Offer 40. 最小的k个数
+PriorityQueue<Integer> queue = new PriorityQueue<Integer>((a,b)->b-a);
+//构建大顶堆
+碰到queue的size和k相等了，就把peek poll出来
+
