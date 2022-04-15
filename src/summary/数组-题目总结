@@ -26,3 +26,6 @@ while (true) {
 从下往上
             
             
+------------349. 两个数组的交集
+直接把数组存进去map， 再看第二个数组在map中是否存在，如果存在，那就是有
+然后   list.stream.mapToInt(i->i).toArray();
