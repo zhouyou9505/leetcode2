@@ -27,3 +27,12 @@ while(left < right){
    ++left;
    --right;
 }
+
+----------168. Excel表列名称
+while(columnNumber > 0){
+    --columnNumber;
+    int i = columnNumber % 26;
+    char str = (char)(i + 'A');
+    res =  str + res;
+    columnNumber = columnNumber / 26;
+}
