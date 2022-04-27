@@ -93,5 +93,13 @@ public boolean isSameTree(TreeNode p, TreeNode q) {
         return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
  }
  
+ -----------111. 二叉树的最小深度
+ if(left > 0 && right > 0){
+            min = Math.min(left,right);
+        }else if(left > 0){
+            min = left;
+        }else {
+            min = right;
+        }
  
  
