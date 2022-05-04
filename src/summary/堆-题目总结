@@ -3,3 +3,14 @@ PriorityQueue<Integer> queue = new PriorityQueue<Integer>((a,b)->b-a);
 //构建大顶堆
 碰到queue的size和k相等了，就把peek poll出来
 
+
+
+-------215. 数组中的第K个最大元素
+  PriorityQueue<Integer> queue = new PriorityQueue<>();
+  //构建小顶堆，其实是构建最大的几个数的小顶堆，然后让他们堆的上多一个，最后给他poll掉堆顶
+  if (queue.size() > k){
+        if (nums[i] < queue.peek()){
+              queue.poll();
+         }
+        }
+  queue.offer(nums[i]);
