@@ -51,3 +51,21 @@ while (true) {
 然后以flg为左边界  left = flg+1  ,right = len-1 .   left,right开始移动
 注意 flg ,left,right 都要去重并注意边界
 
+
+
+--------912. 排序数组
+加入随机因子：
+ int random = new Random().nextInt(right-left)+left;
+ swap(arr,random,right);
+ 
+把最右边的right作为 flg，  然后用快慢指针把数组一分为二，小于nums[right]放左边，大于nums[right]的放右边
+int slow = left;
+for(int fast = left;fast<= right-1; fast++){
+    if (arr[fast] < arr[right]){
+        swap(arr,slow,fast);
+        ++slow;
+    }
+}
+最后把flg跟slow换下，就是一次排序
+
+然后递归治理 left,pivot-1   pivot+1,right
